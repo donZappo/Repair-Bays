@@ -44,7 +44,7 @@
       <HintPath>..\..\..\..\..\..\References\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp_publicized">
-      <HintPath>..\..\..\..\..\..\References\Assembly-CSharp_publicized.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\References\publicized_assemblies\Assembly-CSharp_publicized.dll</HintPath>
     </Reference>
     <Reference Include="Dapper.Unity">
       <HintPath>..\..\..\..\..\..\References\Dapper.Unity.dll</HintPath>
@@ -87,4 +87,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetPath)" "C:\Program Files (x86)\Steam\steamapps\common\BATTLETECH\Mods\RepairBays" /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>
